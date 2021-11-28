@@ -1,0 +1,40 @@
+<%- include('../partials/layout/header.ejs', { titlePage: "Accueil" } ) %>
+
+<div class="d-flex flex-column justify-content-center h-100">
+    <% if (errors && errors.length) { %>
+        <div class="d-flex justify-content-center">
+            <ul class="my-2">
+                <% for (let error of errors) { %>
+                    <li class="text-danger"><%- error %></li>
+                <% } %>
+            </ul>
+        </div>
+    <% } %>
+    <div class="container d-flex justify-content-center align-content-center">
+        <div class="d-flex flex-column align-items-center form">
+            <div class="d-flex flex-row form-header justify-content-center">
+                <h3>Connexion</h3>
+            </div>
+            <form class="d-flex flex-column form-body" method="post" action="<%- pathRoot %>/auth/signin/connexion">
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-row input-group">
+                        <label for="email" class="input-group-text">Email</label>
+                        <input type="email" id="email" value="<%- body ? body.email : "" %>" class="form-control" name="email" required />
+                    </div>
+                    <div class="d-flex flex-row input-group">
+                        <label for="password" class="input-group-text">Mot de passe</label>
+                        <input type="password" id="password" class="form-control" name="password" required />
+                    </div>
+                    <div class="d-flex flex-row justify-content-end">
+                        <a href="<%- pathRoot %>/users/forgot-password" class="link-warning text-decoration-none">Mot de passe oublié ?</a>
+                    </div>
+                </div>
+                <div class="d-flex flex-row input-group justify-content-end form-footer">
+                    <button type="submit" class="btn btn-primary shadow">Se connecter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/layout/footer.ejs') %>

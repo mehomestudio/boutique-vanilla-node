@@ -1,0 +1,44 @@
+<%
+    let name = pageName[0].toUpperCase() + pageName.substring(1, pageName.length);
+%>
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="<%- pathRoot %>/css/index.css" />
+    <link rel="stylesheet" href="<%- pathRoot %>/css/admin.css" />
+    <script src="<%- pathRoot %>/js/admin.js" type="text/javascript" defer></script>
+    <title>Panneau d'administration - <%- name %></title>
+</head>
+<body>
+
+<header>
+    <div class="d-flex align-items-center h-100 topbar">
+        <div class="d-flex ms-5">
+            <a href="<%- pathRoot %>" class="link-warning"><i class="fa fa-arrow-alt-circle-left fs-1"></i></a>
+        </div>
+        <div class="d-flex flex-fill justify-content-center topbar-title">
+            <h1 class="text-decoration-underline">PANNEAU D'ADMINISTRATION</h1>
+        </div>
+    </div>
+</header>
+
+<div class="container-body d-flex align-items-center">
+    <div class="d-flex flex-column align-items-center leftbar">
+        <a class="<% if (pageName === "dashboard") { %>active<% } %>" href="<%- pathRoot %>/admin/dashboard" data-view="dashboard">Dashboard</a>
+        <a class="<% if (pageName === "users") { %>active<% } %>" href="<%- pathRoot %>/admin/users" data-view="users">Utilisateurs</a>
+        <a class="<% if (pageName === "categories") { %>active<% } %>" href="<%- pathRoot %>/admin/categories" data-view="categories">Catégories</a>
+        <a class="<% if (pageName === "products") { %>active<% } %>" href="<%- pathRoot %>/admin/products">Produits</a>
+        <a class="<% if (pageName === "carriers") { %>active<% } %>" href="<%- pathRoot %>/admin/carriers">Transporteurs</a>
+        <a class="<% if (pageName === "orders") { %>active<% } %>" href="<%- pathRoot %>/admin/orders">Commandes</a>
+    </div>
+    <div id="partialView" class="d-flex flex-fill h-100 w-100 justify-content-center mt-5">

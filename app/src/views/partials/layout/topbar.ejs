@@ -1,0 +1,84 @@
+<div class="container-fluid d-flex topbar">
+    <div class="container d-flex flex-row position-relative align-items-center">
+        <div class="d-flex topbar-logo">
+            <a href="<%- pathRoot %>">
+                <img src="<%- pathRoot %>/images/logo.png" alt="logo MH-DevApp" />
+            </a>
+        </div>
+        <div class="ms-4 d-flex flex-column flex-fill topbar-title">
+            <h1><u>BOUTIQUE VANILLA</u></h1>
+            <div class="d-lg-flex d-none flex-row topbar-technos-logo align-self-center justify-content-center">
+                <img src="<%- pathRoot %>/images/html.png" alt="logo html" />
+                <img src="<%- pathRoot %>/images/css.png" alt="logo css" />
+                <img src="<%- pathRoot %>/images/js.png" alt="logo js" />
+                <img src="<%- pathRoot %>/images/bootstrap.png" alt="logo bootstrap" />
+                <img src="<%- pathRoot %>/images/nodejs.png" alt="logo nodejs" />
+                <img src="<%- pathRoot %>/images/mongodb.png" alt="logo mongodb" />
+                <img src="<%- pathRoot %>/images/docker.png" alt="logo mongodb" />
+            </div>
+        </div>
+        <div class="d-flex flex-column topbar-link align-self-start justify-content-evenly h-75">
+            <div class="d-flex flex-row justify-content-lg-between justify-content-center">
+                <% if (!isAuthenticated) { %>
+                    <a href="<%- pathRoot %>/auth/signin/connexion" class="btn btn-primary shadow mx-1">Connexion</a>
+                    <a href="<%- pathRoot %>/users/signup/inscription" class="btn btn-primary shadow mx-1">Inscription</a>
+                <% } %>
+                <a href="#" class="btn btn-success shadow mx-1 py-2">
+                    <span class="d-lg-inline d-none">Panier</span>
+                    <i class="fa fa-shopping-basket ms-lg-2 ms-0"></i>
+                </a>
+                <% if (isAuthenticated) { %>
+                    <% if (user.local.roles.includes("ROLE_ADMIN")) { %>
+                        <a href="<%- pathRoot %>/admin/dashboard" class="btn btn-warning shadow mx-1 py-2">
+                            <span class="d-lg-inline d-none">Admin</span>
+                            <i class="fa fa-users-cog ms-lg-2 ms-0"></i>
+                        </a>
+                    <% } %>
+                    <div class="d-flex topbar-link-profil align-items-center">
+                        <div class="mx-1 border border-light topbar-link-profil-avatar">
+                            <img src="<%- pathRoot %>/images/profil-default.png" alt="logo profil" class="img-thumbnail rounded-circle" width="40px" />
+                        </div>
+                        <div class="d-flex text-uppercase text-light ms-1 topbar-link-profil-username">
+                            <%- user.username %>
+                        </div>
+                        <div class="d-none flex-column align-items-center position-absolute topbar-link-profil-details">
+                            <div class="d-flex flex-row position-relative justify-content-center align-items-center topbar-link-profil-details-avatar">
+                                <img src="<%- pathRoot %>/images/profil-default.png" alt="logo profil" class="img-thumbnail rounded-circle" width="80px" />
+                                <div class="flex-column align-items-center justify-content-center position-absolute topbar-link-profil-details-avatar-edit">
+                                    <i class="fa fa-image"></i>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column align-items-center mt-2">
+                                <span class="text-uppercase fs-5"><%- user.username %></span>
+                                <span class="fst-italic"><%- user.local.email %>
+                                    <i class="fa fa-certificate i-<%- user.local.emailVerified ? "success" : "warning" %>"></i>
+                                </span>
+                            </div>
+                            <hr class="w-100">
+                            <div class="d-flex flex-column align-items-center">
+                                <a href="#" class="link-warning py-1">Mes commandes</a>
+                                <a href="#" class="link-warning py-1">Mes adresses</a>
+                                <a href="<%- pathRoot %>/users/reset-password" class="link-warning py-1">Modifier mon mot de passe</a>
+                            </div>
+                            <hr class="w-100">
+                            <div class="d-flex flex-column">
+                                <a href="<%- pathRoot %>/auth/signout" class="link-warning">Se déconnecter</a>
+                            </div>
+
+                        </div>
+                    </div>
+                <% } %>
+
+            </div>
+            <div class="d-flex flex-row justify-content-end">
+                <div class="input-group">
+                    <input class="form-control" placeholder="Rechercher" />
+                    <span class="input-group-text">
+                    <i class="fa fa-search"></i>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

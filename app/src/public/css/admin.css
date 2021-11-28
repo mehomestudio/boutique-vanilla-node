@@ -1,0 +1,79 @@
+#partialView {
+    width: 100%;
+}
+
+#partialView h1 {
+    color: #353535;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    width: 80%;
+    box-shadow: #353535 0 0 5px 2px;
+    padding: 10px;
+    text-align: center;
+    text-shadow: #ffffff 0 0 2px;
+}
+
+table {
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+}
+
+table thead tr {
+    border-radius: 5px;
+    background-color: #353535;
+    color: #d9d9d9;
+    border-bottom: 3px solid #d9d9d9;
+}
+
+table thead tr th {
+    padding: 10px;
+}
+
+table tbody tr {
+    border-radius: 5px;
+    background-color: rgb(75, 75, 75);
+    border-bottom: 1px solid #d9d9d9;
+    color: #d9d9d9;
+}
+
+table tbody tr td {
+    padding: 10px;
+}
+
+.container-body {
+    padding: 0;
+}
+
+.leftbar {
+    background-color: rgb(75, 75, 75);
+    box-shadow: 0 0 2px 3px #353535;
+    width: 15%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.leftbar a {
+    padding: 20px 0;
+    margin: 10px 0;
+    width: 80%;
+    text-align: center;
+    text-decoration: none;
+    color: #d9d9d9;
+    border: 2px solid #ff8800;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.15em;
+    transition: background-color 0.5s;
+}
+
+.leftbar a:hover {
+    background-color: #ff8800;
+}
+
+.leftbar a.active {
+    background-color: #ff8800;
+    cursor: default;
+}

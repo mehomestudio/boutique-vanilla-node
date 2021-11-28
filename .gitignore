@@ -1,0 +1,5 @@
+/UML
+.idea
+.env
+**/node_modules
+/app/src/public/images/avatars

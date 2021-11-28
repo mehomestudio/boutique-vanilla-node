@@ -1,0 +1,51 @@
+<%- include('../partials/header.ejs') %>
+    <div class="d-flex flex-column align-items-center w-100">
+        <div class="d-flex justify-content-center w-100">
+            <h1 class="text-decoration-underline mb-3">Gestion des utilisateurs</h1>
+        </div>
+        <div class="d-flex justify-content-center w-100">
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Nom complet</th>
+                        <th scope="col">Roles</th>
+                        <th scope="col">Email vérifié</th>
+                        <th scope="col">Nb commandes</th>
+                        <th scope="col">Total €</th>
+                        <th scope="col">Active</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (users && users.length) { %>
+                        <% let index = 1; %>
+                        <% for (const user of users) { %>
+                            <tr>
+                                <td><%- index %></td>
+                                <td><%- user.username %></td>
+                                <td><%- user.local.firstname %> <%- user.local.lastname %></td>
+                                <td class="text-start">
+                                    <% for (const role of user.local.roles) { %>
+                                        - <%- role %><br/>
+                                    <% }%>
+                                </td>
+                                <td><%- user.local.emailVerified ? "Oui" : "Non" %></td>
+                                <td>0</td>
+                                <td>0,00 €</td>
+                                <td><%- user.active ? "Oui" : "Non" %></td>
+                                <td>Del</td>
+                            </tr>
+                        <% index++; %>
+                        <% } %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="9">Aucun utilisateur</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,43 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile.dev
+    env_file:
+      - app/.env
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: ./app/src
+        target: /app/src
+    depends_on:
+      - db
+  db:
+    image: mongo
+    volumes:
+      - type: volume
+        source: boutique_vanilla_dev
+        target: /data/db
+    ports:
+      - "3001:27017"
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile.dev
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+      - db
+      - mailhog
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "3002:1025"
+      - "3003:8025"
+
+volumes:
+  boutique_vanilla_dev:
+    external: true

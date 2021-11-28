@@ -1,0 +1,250 @@
+/* GLOBALS */
+
+*, :after, :before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+header {
+    height: 15%;
+}
+
+.container-body {
+    height: 75%;
+    padding-top: 1em;
+}
+
+footer {
+    height: 10%;
+    background-color: #353535;
+    color: #d9d9d9;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #d9d9d9;
+}
+
+.i-warning {
+    color: #ff8800;
+}
+
+.i-success {
+    color: #2c6e49;
+}
+
+/* REFONTE BS */
+
+.row {
+    margin: 0;
+}
+
+.btn-primary, .btn-primary:focus {
+    background-color: #284b63;
+    border-color: #284b63;
+}
+
+.btn-primary:hover {
+    background-color: #3c6e71;
+    border-color: #3c6e71;
+}
+
+.btn-success, .btn-success:focus {
+    border-color: #2c6e49;
+    background-color: #2c6e49;
+}
+
+.btn-success:hover {
+    border-color: #4c956c;
+    background-color: #4c956c;
+}
+
+.btn-warning, .btn-warning:focus {
+    border-color: #ff8800;
+    background-color: #ff8800;
+    color: #d9d9d9;
+    text-shadow: 0 0 5px #353535;
+}
+
+.btn-warning:hover {
+    border-color: #ffaa00;
+    background-color: #ffaa00;
+    color: #d9d9d9;
+    text-shadow: 0 0 2px #353535;
+}
+
+.link-warning, .link-warning:focus {
+    color: #ff8800;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.link-warning:hover {
+    color: #ffaa00;
+}
+
+.input-group-text {
+    background-color: #ff8800;
+    color: #ffffff;
+    text-shadow: 1px 0 3px #353535;
+}
+
+.form-control {
+    border-color: #ff8800;
+}
+
+.form-control:focus {
+    border-color: #ff8800;
+    box-shadow: 0 0 3px 1px #ff8800;
+}
+
+/* TOPBAR */
+
+.topbar {
+    background-color: #353535;
+    box-shadow: 0 2px 10px #353535;
+}
+
+.topbar .topbar-logo img {
+    width: 150px;
+}
+
+.topbar .topbar-title h1 {
+    font-family: 'Luckiest Guy', cursive;
+    word-spacing: 0.2em;
+    letter-spacing: 0.15em;
+    color: #d9d9d9;
+    text-shadow: 1px 1px 4px #ff8800;
+    margin-top: 10px;
+}
+
+.topbar .topbar-technos-logo {
+    background-color: #ff8800;
+    border-radius: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.topbar .topbar-technos-logo img {
+    width: 40px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.topbar .topbar-link .topbar-link-profil {
+
+}
+
+.topbar .topbar-link .topbar-link-profil .topbar-link-profil-avatar {
+    border-radius: 50%;
+    min-width: 40px;
+    cursor: pointer;
+}
+
+.topbar .topbar-link .topbar-link-profil .topbar-link-profil-avatar img {
+    transition: transform .3s, background-color .6s;
+}
+
+.topbar .topbar-link .topbar-link-profil .topbar-link-profil-avatar:hover img {
+    box-shadow: 0 0 3px 1px #353535, 0 0 3px 2px #ff8800;
+    background-color: #ff8800;
+    transition: transform .3s, background-color 1s;
+    transform: scale(1.1, 1.1);
+}
+
+.topbar .topbar-link .topbar-link-profil .topbar-link-profil-avatar:focus img {
+    box-shadow: 0 0 5px 1px #353535, 0 0 3px 1px #ff8800;
+    background-color: #ff8800;
+}
+
+.topbar .topbar-link .topbar-link-profil .topbar-link-profil-details {
+    max-width: 300px;
+    min-height: 100px;
+    top: 35%;
+    right: 10px;
+    background-color: #353535;
+    color: #d9d9d9;
+    border-radius: 5px;
+    margin-top: .5em;
+    padding: 1em;
+    box-shadow: 0 0 5px 1px #ff8800;
+    z-index: 100;
+}
+
+.topbar .topbar-link .topbar-link-profil .topbar-link-profil-details i.fa-certificate {
+    font-size: 1.2em;
+    margin: 0 0.2em;
+    text-shadow: 0 0 5px #d9d9d9;
+}
+
+.topbar .topbar-link .topbar-link-profil .topbar-link-profil-details .topbar-link-profil-details-avatar-edit {
+    display: flex;
+    opacity: 0;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    color: #d9d9d9;
+    cursor: pointer;
+    background-color: rgba(53,53,53,.5);
+    box-shadow: 0 0 5px 1px #353535, 0 0 7px 4px #ff8800;
+    transition: opacity 1s;
+}
+
+.topbar .topbar-link .topbar-link-profil .topbar-link-profil-details .topbar-link-profil-details-avatar:hover .topbar-link-profil-details-avatar-edit {
+    opacity: 100;
+}
+
+/* ALERTE */
+
+.alert i.fa-times {
+    box-shadow: 0 0 3px 2px rgba(53, 53, 53, 0.15);
+    background-color: rgba(53, 53, 53, 0.1);
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.alert i.fa-times:hover {
+    background-color: rgba(53, 53, 53, 0.2);
+    color: #d9d9d9;
+    transform: scale(1.2, 1.2);
+}
+
+/* FORM */
+
+.form {
+    background-color: #353535;
+    border-radius: 5px;
+    min-width: 50%;
+}
+
+.form .form-header {
+    color: #d9d9d9;
+    text-decoration: underline #ff8800;
+    text-transform: uppercase;
+    text-orientation: sideways;;
+    padding: 0.5em;
+    letter-spacing: 0.2em;
+    text-shadow: 0 0 3px #ff8800, 0 0 3px #ff8800;
+    border-bottom: 3px solid #d9d9d9;
+    width: 100%;
+}
+
+.form .form-body {
+    width: 100%;
+    padding: 1em;
+}
+
+.form .form-body div {
+    margin: 0.3em;
+}
+
+.form .form-footer {
+    padding: 0.2em;
+}
